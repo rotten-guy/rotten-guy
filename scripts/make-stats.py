@@ -86,7 +86,7 @@ def streak(days):
 def level(count, peak):
     if count == 0:
         return 0
-    return min(4, 1 + int(3 * count / max(peak, 1)))
+    return min(4, 1 + int(3 * count / (max(peak, 1) + 1)))
 
 
 def draw(stats):
@@ -109,7 +109,8 @@ def draw(stats):
 
     # contribution heatmap, one column per week
     days = stats["days"][-371:]
-    peak = sorted(c for _, c in days)[int(len(days) * 0.95)] if days else 1
+    active = sorted(c for _, c in days if c)
+    peak = active[int(len(active) * 0.9)] if active else 1  # 90th percentile of active days
     first = dt.date.fromisoformat(days[0][0]) if days else dt.date.today()
     offset = (first.weekday() + 1) % 7  # GitHub weeks start on Sunday
     cell, gap = 15, 4
