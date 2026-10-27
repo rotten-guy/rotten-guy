@@ -17,7 +17,7 @@ from nebula import (
     background, defs, frame, svg, text, text_width, write,
 )
 
-USER = "PoUrRiTuRe"
+USER = "rotten-guy"
 QUERY = """
 query($login: String!) {
   user(login: $login) {
@@ -155,7 +155,7 @@ def draw(stats):
         x += text_width(label, 12) + 40
 
     body.append(frame(uid, w, h))
-    return svg(w, h, "".join(body), "GitHub stats of PoUrRiTuRe")
+    return svg(w, h, "".join(body), "GitHub stats of rotten-guy")
 
 
 if __name__ == "__main__":

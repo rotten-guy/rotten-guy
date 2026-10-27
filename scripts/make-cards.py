@@ -158,14 +158,14 @@ def cards():
         footer=(("status: ", "on my desk", GREEN), "open repository →"),
     )
     card(
-        "card-portfolio", "cp", "pourriture.github.io · personal", "live", GREEN, "globe", CYAN,
+        "card-portfolio", "cp", "rotten-guy.github.io · personal", "live", GREEN, "globe", CYAN,
         "rotten_portfolio", "This theme, as a website.",
         [("Workspaces", ": sections on keys 1 … 5, live clock"),
          ("SUPER + K", ": fuzzel-like search menu"),
          ("Greeter hero", ", kitty + fastfetch card"),
          ("No framework", ": plain HTML / CSS / JS")],
         ["HTML", "CSS", "JavaScript", "GitHub Pages"],
-        footer=(("status: ", "online", GREEN), "pourriture.github.io →"),
+        footer=(("status: ", "online", GREEN), "rotten-guy.github.io →"),
     )
     card(
         "card-guides", "cg", "~/dotfiles/docs · write-ups", "4 guides", YELLOW, "book", YELLOW,

@@ -1,9 +1,9 @@
 <div align="center">
 
-<a href="https://pourriture.github.io"><img src="assets/banner.svg" alt="Joshua Gillet · rotten_guy · networks & telecoms student, Arch + Hyprland, split keyboards" width="100%"></a>
+<a href="https://rotten-guy.github.io"><img src="assets/banner.svg" alt="Joshua Gillet · rotten_guy · networks & telecoms student, Arch + Hyprland, split keyboards" width="100%"></a>
 
-<a href="https://pourriture.github.io"><img src="https://img.shields.io/badge/portfolio-pourriture.github.io-00f0ff?style=for-the-badge&labelColor=070914" alt="Portfolio"></a>
-<a href="https://github.com/PoUrRiTuRe/dotfiles"><img src="https://img.shields.io/badge/rice-nebula-e600ff?style=for-the-badge&labelColor=070914" alt="Nebula rice"></a>
+<a href="https://rotten-guy.github.io"><img src="https://img.shields.io/badge/portfolio-rotten-guy.github.io-00f0ff?style=for-the-badge&labelColor=070914" alt="Portfolio"></a>
+<a href="https://github.com/rotten-guy/dotfiles"><img src="https://img.shields.io/badge/rice-nebula-e600ff?style=for-the-badge&labelColor=070914" alt="Nebula rice"></a>
 <a href="https://leetcode.com/pourriture"><img src="https://img.shields.io/badge/leetcode-pourriture-ffb800?style=for-the-badge&labelColor=070914" alt="LeetCode"></a>
 <a href="https://www.root-me.org/"><img src="https://img.shields.io/badge/root--me-warming_up-00ff66?style=for-the-badge&labelColor=070914" alt="Root-Me"></a>
 
@@ -19,16 +19,16 @@
 | 🐧 | **Daily driver** | Arch Linux + Hyprland, a neon cyan / magenta rice called **Nebula** |
 | ⌨️ | **Typing on** | A wireless Lily58 running my own ZMK firmware, with a bongo cat on the screen |
 | 🎯 | **Training** | Root-Me (security) and LeetCode (algorithms), every week |
-| 🌐 | **Portfolio** | [pourriture.github.io](https://pourriture.github.io), the same theme as a website (press `K` there) |
+| 🌐 | **Portfolio** | [rotten-guy.github.io](https://rotten-guy.github.io), the same theme as a website (press `K` there) |
 
 ---
 
 ## 🗂️ Projects
 
-<a href="https://github.com/PoUrRiTuRe/dotfiles"><img src="assets/card-dotfiles.svg" alt="rotten_dotfiles: a neon cyan / magenta Hyprland rice" width="49%"></a>
-<a href="https://github.com/PoUrRiTuRe/rotten_lily58_keymap_config"><img src="assets/card-lily58.svg" alt="rotten Lily58: wireless split keyboard, custom ZMK screens" width="49%"></a>
-<a href="https://github.com/PoUrRiTuRe/PoUrRiTuRe.github.io"><img src="assets/card-portfolio.svg" alt="rotten_portfolio: this theme, as a website" width="49%"></a>
-<a href="https://github.com/PoUrRiTuRe/dotfiles/tree/main/docs"><img src="assets/card-guides.svg" alt="Write-ups: ZMK dongle, IKEv2 VPN, tablet as a monitor, Arch notes" width="49%"></a>
+<a href="https://github.com/rotten-guy/dotfiles"><img src="assets/card-dotfiles.svg" alt="rotten_dotfiles: a neon cyan / magenta Hyprland rice" width="49%"></a>
+<a href="https://github.com/rotten-guy/rotten_lily58_keymap_config"><img src="assets/card-lily58.svg" alt="rotten Lily58: wireless split keyboard, custom ZMK screens" width="49%"></a>
+<a href="https://github.com/rotten-guy/rotten-guy.github.io"><img src="assets/card-portfolio.svg" alt="rotten_portfolio: this theme, as a website" width="49%"></a>
+<a href="https://github.com/rotten-guy/dotfiles/tree/main/docs"><img src="assets/card-guides.svg" alt="Write-ups: ZMK dongle, IKEv2 VPN, tablet as a monitor, Arch notes" width="49%"></a>
 
 ---
 
@@ -58,7 +58,7 @@
 
 <br>
 
-Every picture is an SVG drawn by a Python script, in the colors of the [Nebula rice](https://github.com/PoUrRiTuRe/dotfiles): background `#070914`, cyan `#00f0ff`, magenta `#e600ff`, fonts JetBrains Mono and Outfit. Text is turned into paths (`fontTools`) so it looks the same on every machine, and the borders spin like the Hyprland ones.
+Every picture is an SVG drawn by a Python script, in the colors of the [Nebula rice](https://github.com/rotten-guy/dotfiles): background `#070914`, cyan `#00f0ff`, magenta `#e600ff`, fonts JetBrains Mono and Outfit. Text is turned into paths (`fontTools`) so it looks the same on every machine, and the borders spin like the Hyprland ones.
 
 ```bash
 pip install fonttools
