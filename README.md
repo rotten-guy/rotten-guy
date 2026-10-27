@@ -1,20 +1,76 @@
-<h1 align="center">Hi 👋, I'm Joshua</h1>
-<h3 align="center">A student in network & telecommunication in France 🇫🇷</h3>
+<div align="center">
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=pourriture&label=Profile%20views&color=0e75b6&style=flat" alt="pourriture" /> </p>
+<a href="https://pourriture.github.io"><img src="assets/banner.svg" alt="Joshua Gillet · rotten_guy · networks & telecoms student, Arch + Hyprland, split keyboards" width="100%"></a>
 
-<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=pourriture" alt="pourriture" /></a> </p>
+<a href="https://pourriture.github.io"><img src="https://img.shields.io/badge/portfolio-pourriture.github.io-00f0ff?style=for-the-badge&labelColor=070914" alt="Portfolio"></a>
+<a href="https://github.com/PoUrRiTuRe/dotfiles"><img src="https://img.shields.io/badge/rice-nebula-e600ff?style=for-the-badge&labelColor=070914" alt="Nebula rice"></a>
+<a href="https://leetcode.com/pourriture"><img src="https://img.shields.io/badge/leetcode-pourriture-ffb800?style=for-the-badge&labelColor=070914" alt="LeetCode"></a>
+<a href="https://www.root-me.org/"><img src="https://img.shields.io/badge/root--me-warming_up-00ff66?style=for-the-badge&labelColor=070914" alt="Root-Me"></a>
 
-<h3 align="left">Connect with me:</h3>
-<p align="left">
-<a href="https://www.leetcode.com/pourriture" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/leet-code.svg" alt="pourriture" height="30" width="40" /></a>
-</p>
+</div>
 
-<h3 align="left">Languages and Tools:</h3>
-<p align="left"> <a href="https://www.arduino.cc/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/arduino-1.svg" alt="arduino" width="40" height="40"/> </a> <a href="https://www.gnu.org/software/bash/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-icon.svg" alt="bash" width="40" height="40"/> </a> <a href="https://www.cprogramming.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="c" width="40" height="40"/> </a> <a href="https://www.w3schools.com/cpp/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="cplusplus" width="40" height="40"/> </a> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://www.docker.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="docker" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://www.linux.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" width="40" height="40"/> </a> <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40"/> </a> </p>
+---
 
-<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=pourriture&show_icons=true&locale=en&layout=compact" alt="pourriture" /></p>
+## ✨ whoami
 
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=pourriture&show_icons=true&locale=en" alt="pourriture" /></p>
+| | | |
+|---|---|---|
+| 🎓 | **Studying** | BUT Networks & Telecoms (R&T) at the IUT of Montbéliard |
+| 🐧 | **Daily driver** | Arch Linux + Hyprland, a neon cyan / magenta rice called **Nebula** |
+| ⌨️ | **Typing on** | A wireless Lily58 running my own ZMK firmware, with a bongo cat on the screen |
+| 🎯 | **Training** | Root-Me (security) and LeetCode (algorithms), every week |
+| 🌐 | **Portfolio** | [pourriture.github.io](https://pourriture.github.io), the same theme as a website (press `K` there) |
 
-<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=pourriture&" alt="pourriture" /></p>
+---
+
+## 🗂️ Projects
+
+<a href="https://github.com/PoUrRiTuRe/dotfiles"><img src="assets/card-dotfiles.svg" alt="rotten_dotfiles: a neon cyan / magenta Hyprland rice" width="49%"></a>
+<a href="https://github.com/PoUrRiTuRe/rotten_lily58_keymap_config"><img src="assets/card-lily58.svg" alt="rotten Lily58: wireless split keyboard, custom ZMK screens" width="49%"></a>
+<a href="https://github.com/PoUrRiTuRe/PoUrRiTuRe.github.io"><img src="assets/card-portfolio.svg" alt="rotten_portfolio: this theme, as a website" width="49%"></a>
+<a href="https://github.com/PoUrRiTuRe/dotfiles/tree/main/docs"><img src="assets/card-guides.svg" alt="Write-ups: ZMK dongle, IKEv2 VPN, tablet as a monitor, Arch notes" width="49%"></a>
+
+---
+
+## 🎯 Training
+
+<a href="https://www.root-me.org/"><img src="assets/card-rootme.svg" alt="Root-Me: hacking challenges, in progress" width="49%"></a>
+<a href="https://leetcode.com/pourriture"><img src="assets/card-leetcode.svg" alt="LeetCode: algorithms and data structures, in progress" width="49%"></a>
+
+---
+
+## ⌨️ Skills
+
+<img src="assets/skills.svg" alt="Skills: Linux, Arch, systemd, SSH, TCP/IP, VPN, Bash, Python, Lua, C, C++, PHP, SQL, HTML, CSS, JavaScript, TypeScript, QML, Git, GitHub, Neovim, GitHub Actions, ZMK, Zephyr RTOS" width="100%">
+
+---
+
+## 📊 Stats
+
+<img src="assets/stats.svg" alt="GitHub stats: contributions, streak, repositories and languages" width="100%">
+
+<sub>Redrawn every day by <a href=".github/workflows/stats.yml">GitHub Actions</a>, no third-party stats service.</sub>
+
+---
+
+<details>
+<summary>🔧 How this profile is made</summary>
+
+<br>
+
+Every picture is an SVG drawn by a Python script, in the colors of the [Nebula rice](https://github.com/PoUrRiTuRe/dotfiles): background `#070914`, cyan `#00f0ff`, magenta `#e600ff`, fonts JetBrains Mono and Outfit. Text is turned into paths (`fontTools`) so it looks the same on every machine, and the borders spin like the Hyprland ones.
+
+```bash
+pip install fonttools
+python3 scripts/make-cards.py                          # banner, cards, skills
+python3 scripts/make-stats.py --sample /tmp/stats.svg  # stats preview with made-up numbers
+```
+
+| File | Purpose |
+|---|---|
+| `scripts/nebula.py` | Palette, text-to-path, starry background, animated border, keycaps |
+| `scripts/make-cards.py` | `banner.svg`, the `card-*.svg` and `skills.svg` |
+| `scripts/make-stats.py` | `stats.svg` from the GitHub API (run by `.github/workflows/stats.yml`) |
+| `scripts/fonts/` | JetBrains Mono and Outfit (SIL Open Font License) |
+
+</details>
