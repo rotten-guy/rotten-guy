@@ -13,7 +13,7 @@
 
 ## ✨ whoami
 
-<img src="assets/logo/avatar-circle.svg" alt="rotten guy>_ logo" width="150" align="right">
+#<img src="assets/logo/avatar-circle.svg" alt="rotten guy>_ logo" width="150" align="right">
 
 | | | |
 |---|---|---|
