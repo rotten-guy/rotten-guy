@@ -4,7 +4,7 @@
 
 <a href="https://rotten-guy.github.io"><img src="https://img.shields.io/badge/portfolio-rotten--guy.github.io-00f0ff?style=for-the-badge&labelColor=070914" alt="Portfolio"></a>
 <a href="https://github.com/rotten-guy/dotfiles"><img src="https://img.shields.io/badge/rice-nebula-e600ff?style=for-the-badge&labelColor=070914" alt="Nebula rice"></a>
-<a href="https://leetcode.com/u/PoUrRiTuRe/"><img src="https://img.shields.io/badge/leetcode-PoUrRiTuRe-ffb800?style=for-the-badge&labelColor=070914" alt="LeetCode"></a>
+<a href="https://leetcode.com/u/rotten-guy/"><img src="https://img.shields.io/badge/leetcode-rotten--guy-ffb800?style=for-the-badge&labelColor=070914" alt="LeetCode"></a>
 <a href="https://www.root-me.org/rotten-guy?lang=en"><img src="https://img.shields.io/badge/root--me-rotten--guy-00ff66?style=for-the-badge&labelColor=070914" alt="Root-Me"></a>
 
 </div>
@@ -35,7 +35,7 @@
 ## 🎯 Training
 
 <a href="https://www.root-me.org/rotten-guy?lang=en"><img src="assets/card-rootme.svg" alt="Root-Me: hacking challenges, in progress" width="49%"></a>
-<a href="https://leetcode.com/u/PoUrRiTuRe/"><img src="assets/card-leetcode.svg" alt="LeetCode: algorithms and data structures, in progress" width="49%"></a>
+<a href="https://leetcode.com/u/rotten-guy/"><img src="assets/card-leetcode.svg" alt="LeetCode: algorithms and data structures, in progress" width="49%"></a>
 
 ---
 

@@ -189,7 +189,7 @@ def cards():
         "LeetCode", "Algorithms and data structures.",
         [("Languages", ": C and Python"),
          ("Goal", ": keep the problem-solving reflexes sharp")],
-        [], footer=(("status: ", "warming up", YELLOW), "leetcode.com/u/PoUrRiTuRe →"), progress=0.06,
+        [], footer=(("status: ", "warming up", YELLOW), "leetcode.com/u/rotten-guy →"), progress=0.06,
     )
 
 
