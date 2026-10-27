@@ -182,14 +182,14 @@ def cards():
         "Root-Me", "Hacking challenges, one category at a time.",
         [("Web-server", ", network, cracking, forensics"),
          ("Goal", ": the security side of networks & telecoms")],
-        [], footer=(("status: ", "warming up", GREEN), "root-me.org →"), progress=0.06,
+        [], footer=(("status: ", "warming up", GREEN), "root-me.org/rotten-guy →"), progress=0.06,
     )
     card(
         "card-leetcode", "lc", "~/training · algorithms", "in progress", YELLOW, "lambda", YELLOW,
         "LeetCode", "Algorithms and data structures.",
         [("Languages", ": C and Python"),
          ("Goal", ": keep the problem-solving reflexes sharp")],
-        [], footer=(("status: ", "warming up", YELLOW), "leetcode.com/pourriture →"), progress=0.06,
+        [], footer=(("status: ", "warming up", YELLOW), "leetcode.com/u/PoUrRiTuRe →"), progress=0.06,
     )
 
 
