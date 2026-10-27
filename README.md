@@ -13,8 +13,6 @@
 
 ## ✨ whoami
 
-#<img src="assets/logo/avatar-circle.svg" alt="rotten guy>_ logo" width="150" align="right">
-
 | | | |
 |---|---|---|
 | 🎓 | **Studying** | BUT Networks & Telecoms (R&T) at the IUT of Montbéliard |
