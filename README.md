@@ -13,6 +13,8 @@
 
 ## ✨ whoami
 
+<img src="assets/logo/avatar-circle.svg" alt="rotten guy>_ logo" width="150" align="right">
+
 | | | |
 |---|---|---|
 | 🎓 | **Studying** | BUT Networks & Telecoms (R&T) at the IUT of Montbéliard |
@@ -63,6 +65,7 @@ Every picture is an SVG drawn by a Python script, in the colors of the [Nebula r
 ```bash
 pip install fonttools
 python3 scripts/make-cards.py                          # banner, cards, skills
+python3 scripts/make-logo.py                           # logos
 python3 scripts/make-stats.py --sample /tmp/stats.svg  # stats preview with made-up numbers
 ```
 
@@ -70,6 +73,7 @@ python3 scripts/make-stats.py --sample /tmp/stats.svg  # stats preview with made
 |---|---|
 | `scripts/nebula.py` | Palette, text-to-path, starry background, animated border, keycaps |
 | `scripts/make-cards.py` | `banner.svg`, the `card-*.svg` and `skills.svg` |
+| `scripts/make-logo.py` | `assets/logo/`: the personal logo (`avatar-*`, "rotten / guy>_") and the website logo (`site`, ">_"), with 1024 px PNG exports |
 | `scripts/make-stats.py` | `stats.svg` from the GitHub API (run by `.github/workflows/stats.yml`) |
 | `scripts/fonts/` | JetBrains Mono and Outfit (SIL Open Font License) |
 
