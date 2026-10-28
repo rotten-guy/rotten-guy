@@ -352,7 +352,7 @@ def typing_svg(data):
     px0, pw = ox + WIDTH * U + 30, w - (ox + WIDTH * U + 30) - 28
     tiles = [
         (f"{wpm:.0f}", "WPM IN THIS ANIMATION", "monkeytype 60 s PB" if "60" in (mt.get("pb") or {}) else "keybr average", CYAN),
-        (f"{kb.get('wpm_avg', 0):.0f}", "KEYBR AVERAGE", f"best {kb.get('wpm_best', 0):.0f} · {kb.get('accuracy', 0):.0f}% accuracy", MAGENTA),
+        (f"{kb.get('wpm_best', 0):.0f}", "BEST WPM", f"keybr record · {kb.get('accuracy', 0):.0f}% accuracy lately", MAGENTA),
         (hours(kb.get("minutes", 0) + mt.get("minutes", 0)), "TIME TYPING", f"{kb.get('lessons', 0)} keybr lessons · {mt.get('tests', 0)} tests", CYAN),
     ]
     for i, (big, label, sub, colour) in enumerate(tiles):
@@ -388,7 +388,9 @@ def activity_svg(data):
     year = [d for d in days if d >= start.isoformat()]
     minutes = sum(days[d][0] for d in year)
     current, best = streaks(days)
-    body.append(text(f"{hours(minutes)} · {len(year)} days · streak {current} (best {best})", w - 30, 82, 13, DIM, anchor="end"))
+    total = sum(m for m, _ in days.values())
+    body.append(text(f"last 12 months {hours(minutes)} · all time {hours(total)} over {len(days)} days · best streak {best}",
+                     w - 30, 82, 13, DIM, anchor="end"))
     cell, gap = 15, 4
     weeks = ((today - start).days + 7) // 7
     gx = (w - (weeks * (cell + gap) - gap)) / 2
