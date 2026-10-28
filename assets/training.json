@@ -1,0 +1,153 @@
+{
+ "keybr": {
+  "accuracy": 95.9,
+  "days": {
+   "2025-06-29": {
+    "lessons": 22,
+    "minutes": 11.2
+   },
+   "2025-06-30": {
+    "lessons": 25,
+    "minutes": 11.4
+   },
+   "2025-07-01": {
+    "lessons": 27,
+    "minutes": 11.8
+   },
+   "2025-07-02": {
+    "lessons": 25,
+    "minutes": 10.4
+   },
+   "2025-07-03": {
+    "lessons": 38,
+    "minutes": 14.7
+   },
+   "2025-07-05": {
+    "lessons": 29,
+    "minutes": 10.1
+   },
+   "2025-07-06": {
+    "lessons": 28,
+    "minutes": 10.6
+   },
+   "2025-07-07": {
+    "lessons": 33,
+    "minutes": 11.2
+   },
+   "2025-07-08": {
+    "lessons": 49,
+    "minutes": 18.7
+   },
+   "2025-07-09": {
+    "lessons": 48,
+    "minutes": 17.2
+   },
+   "2025-07-10": {
+    "lessons": 39,
+    "minutes": 18.1
+   },
+   "2025-07-11": {
+    "lessons": 25,
+    "minutes": 10.6
+   },
+   "2025-07-12": {
+    "lessons": 40,
+    "minutes": 12.2
+   },
+   "2025-07-13": {
+    "lessons": 28,
+    "minutes": 10.9
+   },
+   "2025-07-14": {
+    "lessons": 100,
+    "minutes": 30.2
+   },
+   "2025-07-15": {
+    "lessons": 45,
+    "minutes": 15.5
+   },
+   "2025-07-19": {
+    "lessons": 60,
+    "minutes": 19.4
+   },
+   "2025-07-20": {
+    "lessons": 106,
+    "minutes": 54.2
+   },
+   "2025-07-21": {
+    "lessons": 1,
+    "minutes": 0.6
+   },
+   "2025-07-22": {
+    "lessons": 34,
+    "minutes": 19.5
+   },
+   "2025-07-23": {
+    "lessons": 18,
+    "minutes": 13.3
+   },
+   "2025-07-28": {
+    "lessons": 20,
+    "minutes": 13.2
+   },
+   "2025-07-29": {
+    "lessons": 20,
+    "minutes": 15.1
+   },
+   "2025-07-31": {
+    "lessons": 14,
+    "minutes": 10.3
+   },
+   "2025-08-26": {
+    "lessons": 14,
+    "minutes": 11.1
+   },
+   "2025-08-27": {
+    "lessons": 20,
+    "minutes": 13.4
+   },
+   "2025-08-28": {
+    "lessons": 16,
+    "minutes": 11.3
+   },
+   "2025-08-29": {
+    "lessons": 17,
+    "minutes": 11.3
+   },
+   "2025-09-09": {
+    "lessons": 16,
+    "minutes": 11.1
+   },
+   "2025-09-16": {
+    "lessons": 2,
+    "minutes": 1.2
+   },
+   "2025-09-22": {
+    "lessons": 2,
+    "minutes": 1.2
+   },
+   "2026-10-02": {
+    "lessons": 4,
+    "minutes": 2.6
+   },
+   "2026-10-06": {
+    "lessons": 15,
+    "minutes": 9.8
+   }
+  },
+  "first": "2025-06-29",
+  "lessons": 980,
+  "minutes": 443.2,
+  "wpm_avg": 73.7,
+  "wpm_best": 118.2
+ },
+ "monkeytype": {
+  "days": {},
+  "max_streak": 0,
+  "minutes": 0.0,
+  "pb": {},
+  "streak": 0,
+  "tests": 0
+ },
+ "updated": "2026-10-28"
+}
