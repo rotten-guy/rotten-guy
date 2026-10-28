@@ -34,11 +34,13 @@ KEYBR_ID = "752ae7r"
 MONKEYTYPE_USER = "rotten_guy"
 ROOTME_USER = "rotten-guy"
 # the Lily58 loops over these at my real speed, each with its own punchline
+# (phrase, punchline, how it is erased: "select" = Ctrl + A then Backspace, "hold" = Backspace held down)
 PHRASES = [
-    ("i use arch btw", "0 typos · nobody asked"),
-    ("sudo pacman -Syu", "312 packages · pray for the reboot"),
-    ("ping -c 1 8.8.8.8", "64 bytes · the internet still exists"),
+    ("i use arch btw", "0 typos · nobody asked", "select"),
+    ("sudo pacman -Syu", "312 packages · pray for the reboot", "hold"),
+    ("ping -c 1 8.8.8.8", "64 bytes · the internet still exists", "hold"),
 ]
+SHOW, SELECT, REPEAT = 2.6, 0.45, 0.045   # punchline time, Ctrl + A highlight, Backspace auto-repeat (s)
 DATA = ROOT / "assets" / "training.json"
 UA = {"User-Agent": "rotten-guy-profile-stats (github.com/rotten-guy/rotten-guy)"}
 
@@ -301,11 +303,11 @@ def typing_svg(data):
     uid, w, h = "ty", 1200, 520
     wpm = typing_wpm(data)
     step = 60 / (wpm * 5)                       # seconds per character
-    t0, hold = 0.8, 3.2
+    t0 = 0.8
     starts, t = [], 0.0
-    for line, _ in PHRASES:                     # each phrase: pause, type it, show the punchline
+    for line, _, erase in PHRASES:              # pause, type, punchline, erase
         starts.append(t)
-        t += t0 + len(line) * step + hold
+        t += t0 + len(line) * step + SHOW + (SELECT if erase == "select" else len(line) * REPEAT) + 0.3
     dur = t
     U, ox, oy = 40, 40, 132
     body = [defs(uid, w, h), background(uid, w, h, stars=70, seed=9)]
@@ -320,27 +322,42 @@ def typing_svg(data):
     body.append(text("❯", sx + 14, sy + 18, 14, GREEN, MONO_BOLD))
     cx = sx + 36
     char_w = text_width("m", 15)
-    xs, kt = [f"{cx:.1f}"], ["0"]
+    cursor = [(0.0, cx)]                         # (time, x) steps of the cursor
     presses = {}
-    for (line, punchline), start in zip(PHRASES, starts):
-        end = start + t0 + len(line) * step + hold
+
+    def hit(name, when):
+        presses.setdefault(BASE.index(name), []).append(when)
+
+    for (line, punchline, erase), start in zip(PHRASES, starts):
+        typed_end = start + t0 + len(line) * step
+        erase_at = typed_end + SHOW
+        if erase == "select":                    # Ctrl + A highlights everything, Backspace clears it
+            hit("Ctrl", erase_at), hit("A", erase_at), hit("Bksp", erase_at + SELECT)
+            gone = [erase_at + SELECT] * len(line)
+            cursor.append((erase_at + SELECT, cx))
+            values, times = discrete([(erase_at, erase_at + SELECT)], dur)
+            body.append(f'<rect x="{cx - 2:.1f}" y="{sy + 1}" width="{len(line) * char_w + 4:.1f}" height="22" rx="3" fill="{CYAN}" fill-opacity=".35" opacity="0">'
+                        f'<animate attributeName="opacity" values="{values}" keyTimes="{times}" calcMode="discrete" dur="{dur:.2f}s" repeatCount="indefinite"/></rect>')
+        else:                                    # Backspace held down, last character first
+            gone = [erase_at + (len(line) - 1 - i) * REPEAT for i in range(len(line))]
+            for i in reversed(range(len(line))):
+                hit("Bksp", gone[i])
+                cursor.append((gone[i], cx + i * char_w))
         for i, ch in enumerate(line):
             down = start + t0 + i * step
-            values, times = discrete([(down + step, end)], dur)
+            values, times = discrete([(down + step, gone[i])], dur)
             body.append(f'<g opacity="0">{text(ch, cx + i * char_w, sy + 18, 15, WHITE)}'
                         f'<animate attributeName="opacity" values="{values}" keyTimes="{times}" calcMode="discrete" dur="{dur:.2f}s" repeatCount="indefinite"/></g>')
             for k in key_indexes(ch):
                 presses.setdefault(k, []).append(down)
-            xs.append(f"{cx + (i + 1) * char_w:.1f}")
-            kt.append(f"{(down + step) / dur:.4f}")
-        xs.append(f"{cx:.1f}")                  # cursor back to the start for the next phrase
-        kt.append(f"{min(end, dur - 0.01) / dur:.4f}")
-        values, times = discrete([(start + t0 + len(line) * step + 0.4, end)], dur)
+            cursor.append((down + step, cx + (i + 1) * char_w))
+        values, times = discrete([(typed_end + 0.4, erase_at)], dur)
         body.append(f'<g opacity="0">{text(punchline, sx + sw - 14, sy + 18, 12, MAGENTA, MONO_BOLD, anchor="end")}'
                     f'<animate attributeName="opacity" values="{values}" keyTimes="{times}" calcMode="discrete" dur="{dur:.2f}s" repeatCount="indefinite"/></g>')
+    cursor.sort()
     body.append(
         f'<rect x="{cx:.1f}" y="{sy + 3}" width="2" height="19" fill="{CYAN}">'
-        f'<animate attributeName="x" values="{";".join(xs)}" keyTimes="{";".join(kt)}" calcMode="discrete" dur="{dur:.2f}s" repeatCount="indefinite"/>'
+        f'<animate attributeName="x" values="{";".join(f"{x:.1f}" for _, x in cursor)}" keyTimes="{";".join(f"{t / dur:.4f}" for t, _ in cursor)}" calcMode="discrete" dur="{dur:.2f}s" repeatCount="indefinite"/>'
         '<animate attributeName="opacity" values="1;0" dur="1s" calcMode="discrete" repeatCount="indefinite"/></rect>'
     )
 
