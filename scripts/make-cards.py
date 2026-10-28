@@ -3,8 +3,9 @@
 
 Usage: python3 scripts/make-cards.py   (needs: pip install fonttools)
 
-banner.svg, the project / training cards and skills.svg. The stats picture is
-drawn by make-stats.py (GitHub Actions, every day).
+banner.svg, the project cards and skills.svg. The pictures with live data are
+drawn every day by GitHub Actions: make-stats.py (GitHub) and make-training.py
+(typing and Root-Me).
 """
 from nebula import (
     BG, CARD, CYAN, DIM, DISPLAY, DISPLAY_BOLD, GREEN, MAGENTA, MONO_BOLD, MONO_XBOLD, PINK, TEXT,
@@ -19,8 +20,6 @@ ICONS = {
     "keyboard": '<rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h0M10 10h0M14 10h0M18 10h0M7 14h10"/>',
     "globe": '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/>',
     "book": '<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 21V5M8 7h7"/>',
-    "flag": '<path d="M5 21V4M5 4h11l-2 4 2 4H5"/>',
-    "lambda": '<path d="M6 4h3l9 16M12 11l-6 9"/>',
 }
 
 
@@ -177,20 +176,7 @@ def cards():
         ["Markdown", "Networking", "Linux"],
         footer=(("status: ", "growing", GREEN), "read them →"),
     )
-    card(
-        "card-rootme", "cr", "~/training · security", "in progress", MAGENTA, "flag", GREEN,
-        "Root-Me", "Hacking challenges, one category at a time.",
-        [("Web-server", ", network, cracking, forensics"),
-         ("Goal", ": the security side of networks & telecoms")],
-        [], footer=(("status: ", "warming up", GREEN), "root-me.org/rotten-guy →"), progress=0.06,
-    )
-    card(
-        "card-leetcode", "lc", "~/training · algorithms", "in progress", YELLOW, "lambda", YELLOW,
-        "LeetCode", "Algorithms and data structures.",
-        [("Languages", ": C and Python"),
-         ("Goal", ": keep the problem-solving reflexes sharp")],
-        [], footer=(("status: ", "warming up", YELLOW), "leetcode.com/u/rotten-guy →"), progress=0.06,
-    )
+    # card-rootme.svg and card-typing.svg are drawn with live data by make-training.py
 
 
 # ───────────────────────── skills ─────────────────────────
