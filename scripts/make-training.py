@@ -12,7 +12,7 @@ Sources (all optional, a source that fails keeps its previous data):
 - Root-Me    official API, needs the ROOTME_API_KEY secret
 
 Writes assets/training.json (also read by the website), typing.svg (Lily58 typing
-"i use arch btw" at the real speed), activity.svg (typing calendar), card-typing.svg
+three phrases at the real speed), activity.svg (typing calendar), card-typing.svg
 and card-rootme.svg.
 """
 import datetime as dt
@@ -33,7 +33,12 @@ from nebula import (
 KEYBR_ID = "752ae7r"
 MONKEYTYPE_USER = "rotten_guy"
 ROOTME_USER = "rotten-guy"
-GAG = "i use arch btw"
+# the Lily58 loops over these at my real speed, each with its own punchline
+PHRASES = [
+    ("i use arch btw", "0 typos · nobody asked"),
+    ("sudo pacman -Syu", "312 packages · pray for the reboot"),
+    ("ping -c 1 8.8.8.8", "64 bytes · the internet still exists"),
+]
 DATA = ROOT / "assets" / "training.json"
 UA = {"User-Agent": "rotten-guy-profile-stats (github.com/rotten-guy/rotten-guy)"}
 
@@ -274,8 +279,21 @@ def positions():
     return pos
 
 
-def key_index(char):
-    return BASE.index("Space") if char == " " else BASE.index(char.upper())
+def key_indexes(char):
+    """Keys pressed for one character: Shift + key for capitals."""
+    if char == " ":
+        return [BASE.index("Space")]
+    keys = [BASE.index(char.upper())]
+    return ([BASE.index("Shift")] + keys) if char.isupper() else keys
+
+
+def discrete(windows, dur):
+    """values / keyTimes of a discrete 0/1 animation that is 1 during each (start, end) window, in seconds."""
+    times, values = ["0"], ["0"]
+    for start, end in windows:
+        times += [f"{start / dur:.4f}", f"{end / dur:.4f}"]
+        values += ["1", "0"]
+    return ";".join(values + ["0"]), ";".join(times + ["1"])
 
 
 # ───────────────────────── typing.svg ─────────────────────────
@@ -283,9 +301,12 @@ def typing_svg(data):
     uid, w, h = "ty", 1200, 520
     wpm = typing_wpm(data)
     step = 60 / (wpm * 5)                       # seconds per character
-    typed = len(GAG) * step
     t0, hold = 0.8, 3.2
-    dur = t0 + typed + hold
+    starts, t = [], 0.0
+    for line, _ in PHRASES:                     # each phrase: pause, type it, show the punchline
+        starts.append(t)
+        t += t0 + len(line) * step + hold
+    dur = t
     U, ox, oy = 40, 40, 132
     body = [defs(uid, w, h), background(uid, w, h, stars=70, seed=9)]
     body.append(text("❯ ", 14, 46, 13, GREEN))
@@ -299,29 +320,31 @@ def typing_svg(data):
     body.append(text("❯", sx + 14, sy + 18, 14, GREEN, MONO_BOLD))
     cx = sx + 36
     char_w = text_width("m", 15)
-    for i, ch in enumerate(GAG):
-        on = (t0 + (i + 1) * step) / dur
-        body.append(
-            f'<g opacity="0">{text(ch, cx + i * char_w, sy + 18, 15, WHITE)}'
-            f'<animate attributeName="opacity" values="0;1;0" keyTimes="0;{on:.4f};1" calcMode="discrete" dur="{dur:.2f}s" repeatCount="indefinite"/></g>'
-        )
-    xs = ";".join(f"{cx + i * char_w:.1f}" for i in range(len(GAG) + 1))
-    kt = ";".join(["0"] + [f"{(t0 + (i + 1) * step) / dur:.4f}" for i in range(len(GAG))])
+    xs, kt = [f"{cx:.1f}"], ["0"]
+    presses = {}
+    for (line, punchline), start in zip(PHRASES, starts):
+        end = start + t0 + len(line) * step + hold
+        for i, ch in enumerate(line):
+            down = start + t0 + i * step
+            values, times = discrete([(down + step, end)], dur)
+            body.append(f'<g opacity="0">{text(ch, cx + i * char_w, sy + 18, 15, WHITE)}'
+                        f'<animate attributeName="opacity" values="{values}" keyTimes="{times}" calcMode="discrete" dur="{dur:.2f}s" repeatCount="indefinite"/></g>')
+            for k in key_indexes(ch):
+                presses.setdefault(k, []).append(down)
+            xs.append(f"{cx + (i + 1) * char_w:.1f}")
+            kt.append(f"{(down + step) / dur:.4f}")
+        xs.append(f"{cx:.1f}")                  # cursor back to the start for the next phrase
+        kt.append(f"{min(end, dur - 0.01) / dur:.4f}")
+        values, times = discrete([(start + t0 + len(line) * step + 0.4, end)], dur)
+        body.append(f'<g opacity="0">{text(punchline, sx + sw - 14, sy + 18, 12, MAGENTA, MONO_BOLD, anchor="end")}'
+                    f'<animate attributeName="opacity" values="{values}" keyTimes="{times}" calcMode="discrete" dur="{dur:.2f}s" repeatCount="indefinite"/></g>')
     body.append(
         f'<rect x="{cx:.1f}" y="{sy + 3}" width="2" height="19" fill="{CYAN}">'
-        f'<animate attributeName="x" values="{xs}" keyTimes="{kt}" calcMode="discrete" dur="{dur:.2f}s" repeatCount="indefinite"/>'
+        f'<animate attributeName="x" values="{";".join(xs)}" keyTimes="{";".join(kt)}" calcMode="discrete" dur="{dur:.2f}s" repeatCount="indefinite"/>'
         '<animate attributeName="opacity" values="1;0" dur="1s" calcMode="discrete" repeatCount="indefinite"/></rect>'
-    )
-    gag_on = (t0 + typed + 0.4) / dur
-    body.append(
-        f'<g opacity="0">{text("0 typos · nobody asked", sx + sw - 14, sy + 18, 12, MAGENTA, MONO_BOLD, anchor="end")}'
-        f'<animate attributeName="opacity" values="0;1;0" keyTimes="0;{gag_on:.4f};1" calcMode="discrete" dur="{dur:.2f}s" repeatCount="indefinite"/></g>'
     )
 
     # keyboard, with a flash on every key press
-    presses = {}
-    for i, ch in enumerate(GAG):
-        presses.setdefault(key_index(ch), []).append(t0 + i * step)
     flash = min(0.14, step * 0.8)
     for i, (x, y, rot) in enumerate(positions()):
         big = i >= 50 and rot != 0
@@ -335,11 +358,7 @@ def typing_svg(data):
         size = 13 if len(label) <= 2 else (10 if len(label) <= 5 else 8)
         g = [f'<g{tr}><rect x="{px:.1f}" y="{py:.1f}" width="{kw:.1f}" height="{kh:.1f}" rx="7" fill="{CARD}" stroke="{stroke}" stroke-opacity=".7" stroke-width="1.4"/>']
         if i in presses:
-            times = []
-            for t in presses[i]:
-                times += [(t / dur, 1), ((t + flash) / dur, 0)]
-            keytimes = "0;" + ";".join(f"{k:.4f}" for k, _ in times) + ";1"
-            values = "0;" + ";".join(str(v) for _, v in times) + ";0"
+            values, keytimes = discrete([(t, t + flash) for t in sorted(presses[i])], dur)
             colour = MAGENTA if thumb else CYAN
             g.append(f'<rect x="{px:.1f}" y="{py:.1f}" width="{kw:.1f}" height="{kh:.1f}" rx="7" fill="{colour}" opacity="0" filter="url(#{uid}-soft)">'
                      f'<animate attributeName="opacity" values="{values}" keyTimes="{keytimes}" calcMode="discrete" dur="{dur:.2f}s" repeatCount="indefinite"/></rect>')
@@ -362,7 +381,7 @@ def typing_svg(data):
         body.append(text(label, px0 + pw / 2, y + 76, 11, TEXT, MONO_XBOLD, anchor="middle", spacing=1.4))
         body.append(text(sub, px0 + pw / 2, y + 93, 10, DIM, anchor="middle"))
     body.append(frame(uid, w, h))
-    return svg(w, h, "".join(body), f"Lily58 typing '{GAG}' at {wpm:.0f} WPM")
+    return svg(w, h, "".join(body), f"Lily58 typing {len(PHRASES)} phrases at {wpm:.0f} WPM")
 
 
 # ───────────────────────── activity.svg ─────────────────────────

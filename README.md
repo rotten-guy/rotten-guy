@@ -38,7 +38,7 @@
 <a href="https://www.root-me.org/rotten-guy?lang=en"><img src="assets/card-rootme.svg" alt="Root-Me: score, solved challenges and position" width="49%"></a>
 <a href="https://www.keybr.com/profile/752ae7r"><img src="assets/card-typing.svg" alt="Typing: keybr and Monkeytype stats" width="49%"></a>
 
-<a href="https://monkeytype.com/profile/rotten_guy"><img src="assets/typing.svg" alt="My Lily58 typing &quot;i use arch btw&quot; at my real speed" width="100%"></a>
+<a href="https://monkeytype.com/profile/rotten_guy"><img src="assets/typing.svg" alt="My Lily58 typing i use arch btw, sudo pacman -Syu and ping -c 1 8.8.8.8 at my real speed" width="100%"></a>
 
 <a href="https://rotten-guy.github.io/#skills"><img src="assets/activity.svg" alt="Typing calendar: minutes typed per day" width="100%"></a>
 
@@ -78,7 +78,7 @@ python3 scripts/make-training.py --sample /tmp/training # typing / Root-Me previ
 | `scripts/nebula.py` | Palette, text-to-path, starry background, animated border, keycaps |
 | `scripts/make-cards.py` | `banner.svg`, the `card-*.svg` and `skills.svg` |
 | `scripts/make-logo.py` | `assets/logo/`: the personal logo (`avatar-*`, "rotten / guy>_") and the website logo (`site`, ">_"), with 1024 px PNG exports |
-| `scripts/make-training.py` | `training.json`, `typing.svg` (the Lily58 typing "i use arch btw" at my real speed), `activity.svg`, `card-typing.svg`, `card-rootme.svg`, from keybr, Monkeytype and Root-Me (run by the same workflow) |
+| `scripts/make-training.py` | `training.json`, `typing.svg` (the Lily58 typing three phrases at my real speed), `activity.svg`, `card-typing.svg`, `card-rootme.svg`, from keybr, Monkeytype and Root-Me (run by the same workflow) |
 | `scripts/make-stats.py` | `stats.svg` from the GitHub API (run by `.github/workflows/stats.yml`) |
 | `scripts/fonts/` | JetBrains Mono and Outfit (SIL Open Font License) |
 
