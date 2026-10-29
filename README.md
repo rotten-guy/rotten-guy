@@ -54,7 +54,7 @@
 
 <img src="assets/stats.svg" alt="GitHub stats: contributions, streak, repositories and languages" width="100%">
 
-<sub>Redrawn every day by <a href=".github/workflows/stats.yml">GitHub Actions</a>, no third-party stats service.</sub>
+<sub>Redrawn every hour by <a href=".github/workflows/stats.yml">GitHub Actions</a>, no third-party stats service.</sub>
 
 ---
 

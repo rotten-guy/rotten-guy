@@ -23,6 +23,7 @@ import struct
 import sys
 import urllib.parse
 import urllib.request
+from zoneinfo import ZoneInfo
 from pathlib import Path
 
 from nebula import (
@@ -42,6 +43,7 @@ PHRASES = [
 ]
 SHOW, SELECT, REPEAT = 2.6, 0.45, 0.045   # punchline time, Ctrl + A highlight, Backspace auto-repeat (s)
 DATA = ROOT / "assets" / "training.json"
+TZ = ZoneInfo("Europe/Paris")   # days are counted in my time zone
 UA = {"User-Agent": "rotten-guy-profile-stats (github.com/rotten-guy/rotten-guy)"}
 
 
@@ -99,7 +101,7 @@ def fetch_keybr():
         return None
     days, speeds = {}, []
     for ts, time_ms, length, errors in results:
-        day = dt.datetime.fromtimestamp(ts, dt.timezone.utc).date().isoformat()
+        day = dt.datetime.fromtimestamp(ts, TZ).date().isoformat()
         d = days.setdefault(day, {"minutes": 0.0, "lessons": 0})
         d["minutes"] += time_ms / 60000
         d["lessons"] += 1
@@ -112,7 +114,7 @@ def fetch_keybr():
         "wpm_avg": round(sum(s for s, _ in recent) / len(recent), 1),
         "wpm_best": round(max(s for s, _ in speeds), 1),
         "accuracy": round(100 * sum(a for _, a in recent) / len(recent), 1),
-        "first": dt.datetime.fromtimestamp(results[0][0], dt.timezone.utc).date().isoformat(),
+        "first": dt.datetime.fromtimestamp(results[0][0], TZ).date().isoformat(),
         "days": {k: {"minutes": round(v["minutes"], 1), "lessons": v["lessons"]} for k, v in days.items()},
     }
 
@@ -177,13 +179,13 @@ def fetch():
                 print(f"{name}: skipped")
         except Exception as err:  # keep the previous data, the other sources still update
             print(f"{name}: failed ({err!r}), keeping previous data")
-    data["updated"] = dt.date.today().isoformat()
+    data["updated"] = dt.datetime.now(TZ).strftime("%Y-%m-%d %H:%M")
     return data
 
 
 def sample():
     rnd = random.Random(4)
-    today = dt.date.today()
+    today = dt.datetime.now(TZ).date()
     days, mt_days = {}, {}
     for i in range(300):
         day = today - dt.timedelta(days=i)
@@ -240,7 +242,7 @@ def streaks(days):
         cur = cur + 1 if prev and (day - prev).days == 1 else 1
         best = max(best, cur)
         prev = day
-    today = dt.date.today()
+    today = dt.datetime.now(TZ).date()
     current = 0
     day = today if today.isoformat() in days else today - dt.timedelta(days=1)
     while day.isoformat() in days and any(days[day.isoformat()]):
@@ -415,7 +417,7 @@ def level(minutes, tests):
 def activity_svg(data):
     uid, w, h = "ac", 1200, 330
     days = merged_days(data)
-    today = dt.date.today()
+    today = dt.datetime.now(TZ).date()
     start = today - dt.timedelta(days=364 + (today.weekday() + 1) % 7)
     body = [defs(uid, w, h), background(uid, w, h, stars=40, seed=12)]
     body.append(text("❯ ", 14, 46, 13, GREEN))

@@ -1,10 +1,10 @@
-# Every day: redraws assets/stats.svg (GitHub contributions, streak, repositories, languages)
+# Every hour: redraws assets/stats.svg (GitHub contributions, streak, repositories, languages)
 # and the typing / Root-Me pictures (assets/training.json, typing.svg, activity.svg, card-*.svg).
 name: stats
 
 on:
   schedule:
-    - cron: "17 4 * * *"
+    - cron: "23 * * * *"   # every hour, off the round minute (GitHub drops busy-minute runs)
   workflow_dispatch:
   push:
     branches: [main]
