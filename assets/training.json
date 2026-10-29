@@ -1,6 +1,6 @@
 {
  "keybr": {
-  "accuracy": 95.9,
+  "accuracy": 95.3,
   "days": {
    "2025-06-29": {
     "lessons": 22,
@@ -137,12 +137,16 @@
    "2026-10-28": {
     "lessons": 1,
     "minutes": 0.5
+   },
+   "2026-10-29": {
+    "lessons": 15,
+    "minutes": 10.6
    }
   },
   "first": "2025-06-29",
-  "lessons": 981,
-  "minutes": 443.7,
-  "wpm_avg": 74.3,
+  "lessons": 996,
+  "minutes": 454.3,
+  "wpm_avg": 73.6,
   "wpm_best": 118.2
  },
  "monkeytype": {
@@ -153,5 +157,5 @@
   "streak": 0,
   "tests": 0
  },
- "updated": "2026-10-28"
+ "updated": "2026-10-29 09:31"
 }
