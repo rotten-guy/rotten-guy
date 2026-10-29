@@ -5,7 +5,6 @@
 <a href="https://rotten-guy.github.io"><img src="https://img.shields.io/badge/portfolio-rotten--guy.github.io-00f0ff?style=for-the-badge&labelColor=070914" alt="Portfolio"></a>
 <a href="https://github.com/rotten-guy/dotfiles"><img src="https://img.shields.io/badge/rice-nebula-e600ff?style=for-the-badge&labelColor=070914" alt="Nebula rice"></a>
 <a href="https://www.keybr.com/profile/752ae7r"><img src="https://img.shields.io/badge/keybr-profile-ffb800?style=for-the-badge&labelColor=070914" alt="keybr"></a>
-<a href="https://monkeytype.com/profile/rotten_guy"><img src="https://img.shields.io/badge/monkeytype-rotten__guy-ffb800?style=for-the-badge&labelColor=070914" alt="Monkeytype"></a>
 <a href="https://www.root-me.org/rotten-guy?lang=en"><img src="https://img.shields.io/badge/root--me-rotten--guy-00ff66?style=for-the-badge&labelColor=070914" alt="Root-Me"></a>
 
 </div>
