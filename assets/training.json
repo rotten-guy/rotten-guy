@@ -227,14 +227,14 @@
     "minutes": 3.7
    },
    "2026-11-26": {
-    "lessons": 11,
-    "minutes": 5.3
+    "lessons": 20,
+    "minutes": 8.1
    }
   },
   "first": "2025-06-29",
-  "lessons": 1308,
-  "minutes": 639.8,
-  "wpm_avg": 73.9,
+  "lessons": 1317,
+  "minutes": 642.5,
+  "wpm_avg": 73.7,
   "wpm_best": 119.9
  },
  "monkeytype": {
@@ -252,5 +252,5 @@
   "streak": 1,
   "tests": 4
  },
- "updated": "2026-11-26 12:08"
+ "updated": "2026-11-26 21:18"
 }
